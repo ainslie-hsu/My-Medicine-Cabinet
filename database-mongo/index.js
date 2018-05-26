@@ -11,15 +11,26 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
+var drugSchema = mongoose.Schema({
   name: String,
   exp: Date
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Drug = mongoose.model('Drug', drugSchema);
+
+var save = function(drug) {
+  var data = {
+    name: drug.name,
+    exp: drug.exp
+  }
+  var newDrug = new Drug(data);
+  newDrug.save(function(err, savedDrug) {
+    console.log(err, savedDrug);
+  })
+};
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  Drug.find({}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {
@@ -29,3 +40,4 @@ var selectAll = function(callback) {
 };
 
 module.exports.selectAll = selectAll;
+module.exports.save = save;

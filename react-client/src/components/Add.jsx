@@ -4,28 +4,37 @@ class Add extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      exp: ''
     }
   }
 
-  onSubmit (e) {
+  onChangeName(event) {
     this.setState({
-      term: e.target.value
+      name: event.target.value
     });
   }
 
-  add() {
+  onChangeExp(event) {
+    this.setState({
+      exp: event.target.value
+    });
+  }
+
+  add(event) {
     this.props.onAdd(this.state.name, this.state.exp);
+    event.preventDefault();
   }
 
   render() {
     return (<div>
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <label htmlFor="name">Enter medication </label>
-        <input id="name" name="name" type="text" />
-        <br></br>
+        <input id="name" name="name" type="text" value={this.state.names} onChange={this.onChangeName.bind(this)} />
+        <br/>
         <label htmlFor="exp">Enter expiration date </label>
-        <input id="exp" name="exp" type="date" />
+        <input id="exp" name="exp" type="date" value={this.state.exps} onChange={this.onChangeExp.bind(this)} />
+        <br/>
         <button onClick={this.add.bind(this)}>Add</button>
       </form>
     </div>)

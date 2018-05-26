@@ -15,11 +15,13 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/items',
+      url: '/cabinet',
+      type: 'GET',
       success: (data) => {
-        this.setState({
-          items: data
-        })
+        // this.setState({
+        //   items: data,
+        //   // dates: data.somethingElse
+        // })
       },
       error: (err) => {
         console.log('err', err);
@@ -27,8 +29,18 @@ class App extends React.Component {
     });
   }
 
-  add (entry) {
-
+  add(name, exp) {
+    $.ajax({
+      type: 'POST',
+      url: 'http://127.0.0.1:3000/cabinet',
+      data: {'name': name, 'exp': exp},
+      success: function(data) {
+        console.log('Success! ', data);
+      },
+      error: function (error) {
+        console.error('Error! ', error);
+      }
+    });
   }
 
   render () {
