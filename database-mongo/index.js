@@ -18,12 +18,8 @@ var drugSchema = mongoose.Schema({
 
 var Drug = mongoose.model('Drug', drugSchema);
 
-var save = function(drug) {
-  var data = {
-    name: drug.name,
-    exp: drug.exp
-  }
-  var newDrug = new Drug(data);
+var save = function(info) {
+  var newDrug = new Drug(info);
   newDrug.save(function(err, savedDrug) {
     console.log(err, savedDrug);
   })

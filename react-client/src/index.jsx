@@ -18,13 +18,13 @@ class App extends React.Component {
       url: '/cabinet',
       type: 'GET',
       success: (data) => {
-        // this.setState({
-        //   items: data,
-        //   // dates: data.somethingElse
-        // })
+        console.log('THIS IS THE DATA', data);
+        this.setState({
+          items: data,
+        })
       },
       error: (err) => {
-        console.log('err', err);
+        console.log('Error at componentDidMount', err);
       }
     });
   }
