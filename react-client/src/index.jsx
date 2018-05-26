@@ -2,18 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
+import Add from './components/Add.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       items: []
     }
   }
 
   componentDidMount() {
     $.ajax({
-      url: '/items', 
+      url: '/items',
       success: (data) => {
         this.setState({
           items: data
@@ -25,10 +27,15 @@ class App extends React.Component {
     });
   }
 
+  add (entry) {
+
+  }
+
   render () {
     return (<div>
-      <h1>Item List</h1>
+      <h1>My Medicine Cabinet</h1>
       <List items={this.state.items}/>
+      <Add onAdd={this.add.bind(this)}/>
     </div>)
   }
 }

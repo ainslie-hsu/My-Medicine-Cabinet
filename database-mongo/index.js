@@ -12,8 +12,8 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  name: String,
+  exp: Date
 });
 
 var Item = mongoose.model('Item', itemSchema);
