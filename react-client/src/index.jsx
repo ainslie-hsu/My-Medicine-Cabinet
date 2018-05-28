@@ -16,15 +16,13 @@ class App extends React.Component {
   componentDidMount() {
     $.ajax({
       url: '/cabinet',
-      type: 'GET',
       success: (data) => {
-        console.log('THIS IS THE DATA', data);
         this.setState({
           items: data,
         })
       },
       error: (err) => {
-        console.log('Error at componentDidMount', err);
+        console.log('Error at componentDidMount! ', err);
       }
     });
   }
@@ -32,13 +30,38 @@ class App extends React.Component {
   add(name, exp) {
     $.ajax({
       type: 'POST',
-      url: 'http://127.0.0.1:3000/cabinet',
-      data: {'name': name, 'exp': exp},
+      url: '/cabinet',
+      data: {name: name, exp: exp},
       success: function(data) {
-        console.log('Success! ', data);
+        console.log('Medication successfully added! ', data);
       },
       error: function (error) {
-        console.error('Error! ', error);
+        console.error('Medication failed to submit! ', error);
+      }
+    });
+  }
+
+  remove(id) {
+    $.ajax({
+      type: 'DELETE',
+      url: '/cabinet',
+      data: {id: id},
+      success: function(data) {
+        console.log('Medication successfully removed! ', data);
+      },
+      error: function (error) {
+        console.error('Medication failed to delete! ', error);
+      }
+    });
+    $.ajax({
+      url: '/cabinet',
+      success: (data) => {
+        this.setState({
+          items: data,
+        })
+      },
+      error: (err) => {
+        console.log('Error at remove! ', err);
       }
     });
   }
@@ -46,7 +69,7 @@ class App extends React.Component {
   render () {
     return (<div>
       <h1>My Medicine Cabinet</h1>
-      <List items={this.state.items}/>
+      <List items={this.state.items} onRemove={this.remove.bind(this)}/>
       <Add onAdd={this.add.bind(this)}/>
     </div>)
   }

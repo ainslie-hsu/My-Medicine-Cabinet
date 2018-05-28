@@ -32,8 +32,15 @@ var selectAll = function(callback) {
     } else {
       callback(null, items);
     }
-  });
+  }).sort('exp');
 };
+
+var remove = function(id) {
+  Drug.findByIdAndRemove(id, function (err, removedDrug){
+    if(err) { throw err; }
+  });
+}
 
 module.exports.selectAll = selectAll;
 module.exports.save = save;
+module.exports.remove = remove;

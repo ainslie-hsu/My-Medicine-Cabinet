@@ -23,6 +23,7 @@ class Add extends React.Component {
 
   add(event) {
     this.props.onAdd(this.state.name, this.state.exp);
+    this.form.reset();
     event.preventDefault();
   }
 
