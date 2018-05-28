@@ -8,3 +8,7 @@ table, th, td
 padding: 5px;
 border: 1px solid black;
 }
+input[type=search]::-webkit-input-placeholder { /* Safari, Chrome(, Opera?) */
+ color:gray;
+ font-style:italic;
+}

@@ -52,18 +52,19 @@ class App extends React.Component {
       error: function (error) {
         console.error('Medication failed to delete! ', error);
       }
-    });
-    $.ajax({
-      url: '/cabinet',
-      success: (data) => {
-        this.setState({
-          items: data,
-        })
-      },
-      error: (err) => {
-        console.log('Error at remove! ', err);
-      }
-    });
+    }).done(
+      $.ajax({
+        url: '/cabinet',
+        success: (data) => {
+          this.setState({
+            items: data,
+          })
+        },
+        error: (err) => {
+          console.log('Error rendering after remove! ', err);
+        }
+      })
+    )
   }
 
   render () {
