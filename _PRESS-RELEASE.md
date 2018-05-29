@@ -20,25 +20,25 @@ Once the project moves into development, the press release can be used as a touc
   > My Medicine Cabinet
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Keep track of all of your medications!
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Easy to use! A product for everyone! Just enter in your medication and the expiration date.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Never be surpised by expired medication in your medicine cabinet again!
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > My Medicine Cabinet keeps track of your medications by expiration date.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "It's a great product!" -Ainslie Hsu
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Get started just by entering in your medications.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "It's a great product!" -My Medicine Cabinet Customer
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > To use, just download the app!
