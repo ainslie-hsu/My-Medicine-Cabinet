@@ -9,20 +9,18 @@ const List = (props) => {
 
   return (
     <div>
-      <h4> List Component </h4>
-      There are { props.items.length } items.
-        <table>
-          <thead>
-            <tr>
-              <th>Medication</th>
-              <th>Exp. Date</th>
-              <th>Remove</th>
-            </tr>
-          </thead>
-          <tbody>
-            {props.items.map(item => <ListItem item={item} key={item._id} onRemove={remove}/>)}
-          </tbody>
-        </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Medication</th>
+            <th>Exp. Date</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.items.map(item => <ListItem item={item} key={item._id} onRemove={remove}/>)}
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -29,15 +29,15 @@ class Add extends React.Component {
 
   render() {
     return (
-      <div>
-        <form>
+      <div className="add">
+        <form className="add-button">
           <label htmlFor="name">Enter medication </label>
           <input id="name" name="name" type="text" value={this.state.names} onChange={this.onChangeName.bind(this)} />
           <br/>
           <label htmlFor="exp">Enter expiration date </label>
           <input id="exp" name="exp" type="date" value={this.state.exps} onChange={this.onChangeExp.bind(this)} />
           <br/>
-          <button onClick={this.add.bind(this)}>Add</button>
+          <button onClick={this.add.bind(this)} >Add</button>
         </form>
       </div>
     )

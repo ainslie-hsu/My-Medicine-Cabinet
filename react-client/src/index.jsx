@@ -69,7 +69,8 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>My Medicine Cabinet</h1>
+      <h1 className="header">My Medicine Cabinet</h1>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZFMFnneLhqY_JnBx3Eek9ZV0JeqZkrQJW7-M1P-yW-ssK54Q9Cw"></img>
       <List items={this.state.items} onRemove={this.remove.bind(this)}/>
       <Add onAdd={this.add.bind(this)}/>
     </div>)

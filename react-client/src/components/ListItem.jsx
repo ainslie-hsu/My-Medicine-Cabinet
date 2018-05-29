@@ -13,7 +13,7 @@ const ListItem = (props) => {
     <tr>
       <td>{props.item.name}</td>
       <td>{date}</td>
-      <td><button onClick={remove}>Remove</button></td>
+      <td><button onClick={remove} className="remove-button">X</button></td>
     </tr>
   )
 }
